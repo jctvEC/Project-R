@@ -8,10 +8,38 @@
 ####################################      PROJETO II     ############################################
 #####################################################################################################
 
+#enconding="UFT8" ou usar o latin2 tb.
+enconding="latin1"
 
 # Início da questão (1) ---------------------------------
 # Descarregue o arquivo .csv da planilha e imprima o dataframe obtido exatamente do jeito que ele se encontra.
+db <- read.csv("D:\\Users\\jctv\\Desktop\\amostra.csv")
+
+titulos = db[1]
+notas = db[2]
+anos = db[3]
+
+
+
+
+
+
 # Nessa questão, o problema da média foi resolvido da seguinte forma (...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Início da questão (2) ---------------------------------
 # Encontre a média das notas (sem utilizar a função pronta do R).
