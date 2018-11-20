@@ -8,8 +8,8 @@
 ####################################      PROJETO II     ############################################
 #####################################################################################################
 
-#enconding="UFT8" ou usar o latin2 tb.
-enconding="latin1"
+#enconding="UFT8"   #ou usar o latin2 tb.
+enconding="latin1"  #tentativas falhas de tentar corrigir os erros de acentuacao 
 
 # Início da questão (1) ---------------------------------
 # Descarregue o arquivo .csv da planilha e imprima o dataframe obtido exatamente do jeito que ele se encontra.
@@ -19,9 +19,12 @@ titulos = db[1]
 notas = db[2]
 anos = db[3]
 
+dados = data.frame(TITULOS = titulos, NOTAS = notas, ANOS = anos)#coloca os dados em um data frame
 
+print(dados)#printa os dados
 
-
+tamanhoDaAmostra = lengths(dados[1])#leva alem do tamanho o nome da coluna
+unname(tamanhoDaAmostra, force = FALSE)#tira o nome da coluna
 
 
 # Nessa questão, o problema da média foi resolvido da seguinte forma (...)
