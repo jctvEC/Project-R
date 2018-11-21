@@ -62,8 +62,7 @@ cat("\nQuestão 1 - a Média é:", MEDIA_)
     
     variancia = m/tamanhoDaAmostra; 
     return(sqrt(variancia)) #desvio
-    
-    
+
   }
 DESVIO_ = desvio(dados)
   cat("\nQuestao 2 - O Desvio padrão é: ", DESVIO_)
@@ -78,9 +77,17 @@ DESVIO_ = desvio(dados)
 # InÃ­cio da questÃ£o (5) ---------------------------------
 # FaÃ§a uma funÃ§Ã£o que retorna apenas os nomes dos filmes que possuem notas maiores ou iguais a seis (6).
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+  cat("\nQuestão 5 - n Os filmes com nota maior ou igual a seis(6) são:\n")
+  selecao = function(){
+    filmesComNotaMaiorOuIgualA6 = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
+    filmesComNotaMaiorOuIgualA6 = unname(filmesComNotaMaiorOuIgualA6, force = FALSE)#tira o nome da coluna
+    print(filmesComNotaMaiorOuIgualA6, row.names = FALSE)
+  }
+  selecao()
+  
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (6) ---------------------------------
+# InÃ­cio da questÃ£o (6) --------------------------------- JOAO FEZ ESSA
 #FaÃ§a uma funÃ§Ã£o que retorna quantos filmes possuem notas abaixo de seis (6).
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 #####################################################################################################
