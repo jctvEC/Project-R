@@ -94,7 +94,7 @@ DESVIO_ = desvio(dados)
 # Inicio da questao (5) ---------------------------------
 # Faça uma funcao que retorna apenas os nomes dos filmes que possuem notas maiores ou iguais a seis (6).
 # Nessa questao, o problema da media foi resolvido da seguinte forma (...)
-  cat("\nQuestao 5 - Os filmes com nota maior ou igual a seis(6) sao:\n")
+  cat("\nQuestao 5 - Os nomes dos filmes com nota maior ou igual a seis(6) sao:\n")
   selecaoNotaMaiorOuIgualAseis = function(){
     filmesComNotaMaiorOuIgualA6 = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
     filmesComNotaMaiorOuIgualA6 = unname(filmesComNotaMaiorOuIgualA6, force = FALSE)#tira o nome da coluna
@@ -139,37 +139,50 @@ DESVIO_ = desvio(dados)
    }
   selecaoAno()
 # Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+  #####################################################################################################
+  
+  # Inicio da questao (7) ---------------------------------
+  # Faça uma funcao que retorna o nome do filme com menor pontuacao e o nome do filme com maior pontuacao, nessa ordem.
+  # Por fim, Faça um dataframe com os dois filmes encontrados com as colunas titulo, NOTA, ANO assim como o original.
+  # Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+  cat("\nQuestao 7 - Os filme com maior e menor pontuacao, respectivamente sao:\n")
+  selecaoMenorEMaior = function(){
+    filtro = dados
+    filtro = dados[dados$NOTAS >= 0,]
+    maximo = max(filtro[2]);
+    
+    minimo = min(filtro[2]);
+    
+    linhaDoMaximo = (which(grepl(maximo, dados$NOTAS)))
+    linhaDoMinimo = (which(grepl(minimo, dados$NOTAS)))
+    
+    filmeComNotaMaior = dados[dados$NOTAS == maximo,]["TITULOS"]#faz filtragem na coluna de titulos
+    filmeComNotaMaior= unname(filmeComNotaMaior, force = FALSE)#tira o nome da coluna
+    #nomeMaior = print(filmeComNotaMaior, row.names = FALSE)
+    print(filmeComNotaMaior, row.names = FALSE)
+    nomeMaior <- as.character(dados$TITULOS[linhaDoMaximo])
+    
+    filmeComNotaMenor = dados[dados$NOTAS == minimo,]["TITULOS"]#faz filtragem na coluna de titulos
+    filmeComNotaMenor= unname(filmeComNotaMenor, force = FALSE)#tira o nome da coluna
+    #nomeMenor = print(filmeComNotaMenor, row.names = FALSE)
+    print(filmeComNotaMenor, row.names = FALSE)
+    nomeMenor <- as.character(dados$TITULOS[linhaDoMinimo])
+    
+    
+    titulosNovo = c(nomeMenor, nomeMaior)
+    notasNovo = c(filtro[linhaDoMinimo,2], filtro[linhaDoMaximo,2])
+    anosNovo = c(filtro[linhaDoMinimo,3],filtro[linhaDoMaximo,3])
+    cat("\nImprimindo o dataframe com esses dois filmes selecionados:\n")
+    dataFrameNovo = data.frame(TITULOS = titulosNovo, NOTAS = notasNovo, ANOS = anosNovo)#coloca os dados em um data frame
+    print(dataFrameNovo)
+    
+  }
+  selecaoMenorEMaior()
+  #####################################################################################################
 #####################################################################################################
 
 # Inicio da questao (9) ---------------------------------
 # Faça um histograma onde mostra a frequencia de filmes com notas maiores ou iguais a seis de cada ano. 
 # Nao esqueca de dar um titulo e fazer ele de forma colorida, facilitando a visualizacao. 
 # Nessa questao, o problema da media foi resolvido da seguinte forma (...)
-#####################################################################################################
 
-# Inicio da questao (7) ---------------------------------
-# Faça uma funcao que retorna o nome do filme com menor pontuacao e o nome do filme com maior pontuacao, nessa ordem.
-# Por fim, Faça um dataframe com os dois filmes encontrados com as colunas titulo, NOTA, ANO assim como o original.
-# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
-cat("\nQuestao 7 - Os filme com maior e menor pontuacao, respectivamente sao:\n")
-selecaoMenorEMaior = function(){
-  filtro = dados
-  #filtro2 = dados
-  filtro = dados[dados$NOTAS >= 0,]
-  maximo = max(filtro[2]);
-  print(maximo)
-  minimo = min(filtro[2]);
-  print(minimo)
- print(filtro[maximo,])
-  
-  # for(i in dados){
-    
-  #  if(i[2]$NOTAS == maximo)
-   # print(i)
-  #}
-  
-  #print(tabela[tabela == max(tabela)])
-  #cat("vezes\n")
-}
-selecaoMenorEMaior()
-#####################################################################################################
