@@ -26,7 +26,7 @@ print(dados)#printa os dados
 
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (2) ---------------------------------
+# InÃ�cio da questÃ£o (2) ---------------------------------
 # Encontre a mÃ©dia das notas (sem utilizar a funÃ§Ã£o pronta do R).
 
 tamanhoDaAmostra = lengths(dados[1])#leva alem do tamanho o nome da coluna
@@ -48,7 +48,7 @@ cat("\nQuestão 2 - a Média é:", MEDIA_)
 
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (3) ---------------------------------
+# InÃ�cio da questÃ£o (3) ---------------------------------
 # Encontre o desvio padrÃ£o das notas (sem utilizar a funÃ§Ã£o pronta do R).
   variancia = 0;
   
@@ -69,12 +69,26 @@ DESVIO_ = desvio(dados)
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 
 #####################################################################################################
-# InÃ­cio da questÃ£o (4) ---------------------------------
+# InÃ�cio da questÃ£o (4) ---------------------------------
 # Encontre a moda das notas (sem utilizar a funÃ§Ã£o pronta do R).
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+  cat("\nQuestão 4 - A nota de maior moda é:\n")
+  selecaoModa = function(){
+    
+    filtro = dados
+    filtro = dados[dados$NOTAS >= 0,][2]#faz filtragem na coluna de anos --> 3, ao colocar "ANOS" nao reconhece.
+    
+    tabela<-table(filtro)
+    print(tabela[tabela == max(tabela)])
+    cat("vezes\n")
+  }
+  
+  selecaoModa();
+    
+  
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (5) ---------------------------------
+# InÃ�cio da questÃ£o (5) ---------------------------------
 # FaÃ§a uma funÃ§Ã£o que retorna apenas os nomes dos filmes que possuem notas maiores ou iguais a seis (6).
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
   cat("\nQuestão 5 - Os filmes com nota maior ou igual a seis(6) são:\n")
@@ -87,7 +101,7 @@ DESVIO_ = desvio(dados)
   
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (6) --------------------------------- 
+# InÃ�cio da questÃ£o (6) --------------------------------- 
   cat("\nQuestão 6 - A quantidade de filmes com nota nota menor que seis(6) é:\n")
 #FaÃ§a uma funÃ§Ã£o que retorna quantos filmes possuem notas abaixo de seis (6).
   notaMenorQueSeis  = function(dados){
@@ -107,26 +121,38 @@ DESVIO_ = desvio(dados)
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (7) ---------------------------------
+# InÃ�cio da questÃ£o (7) ---------------------------------
 # FaÃ§a uma funÃ§Ã£o que retorna o nome do filme com menor pontuaÃ§Ã£o e o nome do filme com maior pontuaÃ§Ã£o, nessa ordem.
 # Por fim, faÃ§a um dataframe com os dois filmes encontrados com as colunas TÃTULO, NOTA, ANO assim como o original.
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
   cat("\nQuestão 7 - Os filme com maior e menor pontuacao, respectivamente são:\n")
-  selecao = function(){
-    filtro = dados
-    filtro = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
-    filtro = unname(filmesComNotaMaiorOuIgualA6, force = FALSE)#tira o nome da coluna
-    print(filtro, row.names = FALSE)
-  }
-  selecao()
+ # selecao = function(){
+ #  filtro = dados
+  #  filtro = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
+   # filtro = unname(filtro, force = FALSE)#tira o nome da coluna
+  #  print(filtro, row.names = FALSE)
+#  }
+ # selecao()
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (8) ---------------------------------
-# FaÃ§a uma funÃ§Ã£o que retorne o ano em que saÃ­ram mais filmes com notas maiores ou iguais a seis e meio (6,5).
+# InÃ�cio da questÃ£o (8) ---------------------------------
+# FaÃ§a uma funÃ§Ã£o que retorne o ano em que saÃ�ram mais filmes com notas maiores ou iguais a seis e meio (6,5).
+  cat("\nQuestão 8 - O ano em que saiu mais filmes com notas maiores ou iguais a seis e meio(6.5), é:\n")
+  selecao2 = function(){
+    
+    filtro = dados
+    filtro = dados[dados$NOTAS >= (6.5),][3]#faz filtragem na coluna de anos --> 3, ao colocar "ANOS" nao reconhece.
+    
+    tabela<-table(filtro)
+    print(tabela[tabela == max(tabela)])
+    cat("vezes\n")
+    
+   }
+  selecao2()
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (9) ---------------------------------
-# FaÃ§a um histograma onde mostra a frequÃªncia de filmes com notas maiores ou iguais a seis de cada ano. NÃ£o esqueÃ§a de dar um tÃ­tulo e fazer ele de forma colorida, facilitando a visualizaÃ§Ã£o. 
+# InÃ�cio da questÃ£o (9) ---------------------------------
+# FaÃ§a um histograma onde mostra a frequÃªncia de filmes com notas maiores ou iguais a seis de cada ano. NÃ£o esqueÃ§a de dar um tÃ�tulo e fazer ele de forma colorida, facilitando a visualizaÃ§Ã£o. 
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 #####################################################################################################
