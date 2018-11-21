@@ -122,23 +122,7 @@ DESVIO_ = desvio(dados)
       
   
 # Nessa questao, o problema da media foi resolvido da seguinte forma (...)
-#####################################################################################################
 
-# Inicio da questao (8) ---------------------------------
-# Faça uma funcao que retorne O ano em que sairam mais filmes com notas maiores ou iguais a seis e meio (6,5).
-  cat("\nQuestao 8 - O ano em que saiu mais filmes com notas maiores ou iguais a seis e meio(6.5), eh:\n")
-  selecaoAno = function(){
-    
-    filtro = dados
-    filtro = dados[dados$NOTAS >= (6.5),][3]#faz filtragem na coluna de anos --> 3, ao colocar "ANOS" nao reconhece.
-    
-    tabela<-table(filtro)
-    print(tabela[tabela == max(tabela)])
-    cat("vezes\n")
-    
-   }
-  selecaoAno()
-# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
   #####################################################################################################
   
   # Inicio da questao (7) ---------------------------------
@@ -177,12 +161,43 @@ DESVIO_ = desvio(dados)
     print(dataFrameNovo)
     
   }
-  selecaoMenorEMaior()
-  #####################################################################################################
+  selecaoMenorEMaior()  
+    
 #####################################################################################################
+
+# Inicio da questao (8) ---------------------------------
+# Faça uma funcao que retorne O ano em que sairam mais filmes com notas maiores ou iguais a seis e meio (6,5).
+  cat("\nQuestao 8 - O ano em que saiu mais filmes com notas maiores ou iguais a seis e meio(6.5), eh:\n")
+  selecaoAno = function(){
+    
+    filtro = dados
+    filtro = dados[dados$NOTAS >= (6.5),][3]#faz filtragem na coluna de anos --> 3, ao colocar "ANOS" nao reconhece.
+    
+    tabela<-table(filtro)
+    print(tabela[tabela == max(tabela)])
+    cat("vezes\n")
+    
+   }
+  selecaoAno()
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+  
+#####################################################################################################
+
 
 # Inicio da questao (9) ---------------------------------
 # Faça um histograma onde mostra a frequencia de filmes com notas maiores ou iguais a seis de cada ano. 
 # Nao esqueca de dar um titulo e fazer ele de forma colorida, facilitando a visualizacao. 
 # Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+  histog = function(){
+    cat("\n\nQuestao 9 - Faça um histograma onde mostra a frequencia de filmes com notas maiores ou iguais a seis de cada ano\n\n")
+    filtro = dados
+    filtro = dados[dados$NOTAS >= (6),][3]#faz filtragem na coluna de anos --> 3, ao colocar "ANOS" nao reconhece.
+    Filmes = c(filtro[,1])
+    #print(Filmes)
+    #tabela<-table(filtro)
+    #print(tabela)
+    hist(Filmes, main = "Filmes com nota maior ou igual a seis(6)", xlab = "Anos", ylab="Frequencia", col="darkblue", border="black");
 
+    }
+  histog();
+#####################################################################################################
