@@ -11,8 +11,7 @@
 #enconding="UFT8"   #ou usar o latin2 tb.
 enconding="latin1"  #tentativas falhas de tentar corrigir os erros de acentuacao 
 
-#####################################################################################################
-# Inicio da questÃ£o (1) ---------------------------------
+##########################################QUESTAO 1####################################################
 # Descarregue o arquivo .csv da planilha e imprima o dataframe obtido exatamente do jeito que ele se encontra.
 db <- read.csv("D:\\Users\\jctv\\Documents\\Project-R\\amostra.csv")
 
