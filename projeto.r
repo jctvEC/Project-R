@@ -54,7 +54,7 @@ desvio = function(dados){
     m =  m + ((dados[i,2] - MEDIA_ ) * (dados[i,2] - MEDIA_ )) #parte da formula da variancia
   }
 
-  variancia = m/tamanhoDaAmostra; #parte da formula da variancia
+  variancia = m/(tamanhoDaAmostra - 1); #parte da formula da variancia
   return(sqrt(variancia)) #desvio eh raiz da variancia
 }
 DESVIO_ = desvio(dados)
