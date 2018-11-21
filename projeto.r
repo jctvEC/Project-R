@@ -77,7 +77,7 @@ DESVIO_ = desvio(dados)
 # InÃ­cio da questÃ£o (5) ---------------------------------
 # FaÃ§a uma funÃ§Ã£o que retorna apenas os nomes dos filmes que possuem notas maiores ou iguais a seis (6).
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
-  cat("\nQuestão 5 - n Os filmes com nota maior ou igual a seis(6) são:\n")
+  cat("\nQuestão 5 - Os filmes com nota maior ou igual a seis(6) são:\n")
   selecao = function(){
     filmesComNotaMaiorOuIgualA6 = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
     filmesComNotaMaiorOuIgualA6 = unname(filmesComNotaMaiorOuIgualA6, force = FALSE)#tira o nome da coluna
@@ -87,14 +87,38 @@ DESVIO_ = desvio(dados)
   
 #####################################################################################################
 
-# InÃ­cio da questÃ£o (6) --------------------------------- JOAO FEZ ESSA
+# InÃ­cio da questÃ£o (6) --------------------------------- 
+  cat("\nQuestão 6 - A quantidade de filmes com nota nota menor que seis(6) é:\n")
 #FaÃ§a uma funÃ§Ã£o que retorna quantos filmes possuem notas abaixo de seis (6).
+  notaMenorQueSeis  = function(dados){
+    qtd = 0
+    for ( i in 1:tamanhoDaAmostra){
+      if(dados[i,2] < 6){
+        qtd = qtd + 1;
+      }
+    }
+    return(qtd)
+  }
+  saida2 = notaMenorQueSeis(dados); 
+  cat(saida2) 
+  cat("\n")
+      
+  
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 #####################################################################################################
 
 # InÃ­cio da questÃ£o (7) ---------------------------------
-# FaÃ§a uma funÃ§Ã£o que retorna o nome do filme com menor pontuaÃ§Ã£o e o nome do filme com maior pontuaÃ§Ã£o, nessa ordem. Por fim, faÃ§a um dataframe com os dois filmes encontrados com as colunas TÃTULO, NOTA, ANO assim como o original.
+# FaÃ§a uma funÃ§Ã£o que retorna o nome do filme com menor pontuaÃ§Ã£o e o nome do filme com maior pontuaÃ§Ã£o, nessa ordem.
+# Por fim, faÃ§a um dataframe com os dois filmes encontrados com as colunas TÃTULO, NOTA, ANO assim como o original.
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+  cat("\nQuestão 7 - Os filme com maior e menor pontuacao, respectivamente são:\n")
+  selecao = function(){
+    filtro = dados
+    filtro = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
+    filtro = unname(filmesComNotaMaiorOuIgualA6, force = FALSE)#tira o nome da coluna
+    print(filtro, row.names = FALSE)
+  }
+  selecao()
 #####################################################################################################
 
 # InÃ­cio da questÃ£o (8) ---------------------------------
