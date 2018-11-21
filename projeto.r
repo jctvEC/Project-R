@@ -1,9 +1,9 @@
 #####################################################################################################
 # Universidade Federal de Pernambuco - UFPE                                                         #
-# Graduação em Ciência da Computação - Em: Novembro/2018                                            #
-# Disciplina: Estatistica E Probabilidade para Computação - ET586  - Profa. Dr. Renata Souza (rmcrs)#
+# Graduacao em Ciencia da Computacao - Em: Novembro/2018                                            #
+# Disciplina: Estatistica E Probabilidade para Computacao - ET586  - Profa. Dr. Renata Souza (rmcrs)#
 # Discente: Juliano Cezar Teles Vaz (jctv)                                                          #
-# Discente: João Victor da S. Lobão (jvsl2)                                                         #
+# Discente: Joao Victor da S. Lobao (jvsl2)                                                         #
 #####################################################################################################
 ####################################      PROJETO II     ############################################
 #####################################################################################################
@@ -12,22 +12,22 @@
 enconding="latin1"  #tentativas falhas de tentar corrigir os erros de acentuacao 
 
 #####################################################################################################
-# Inicio da questão (1) ---------------------------------
+# Inicio da questÃ£o (1) ---------------------------------
 # Descarregue o arquivo .csv da planilha e imprima o dataframe obtido exatamente do jeito que ele se encontra.
-db <- read.csv("C:\\Users\\teste\\Desktop\\Project-R\\amostra.csv")
+db <- read.csv("D:\\Users\\jctv\\Documents\\Project-R\\amostra.csv")
 
 titulos = db[1]
 notas = db[2]
 anos = db[3]
 
 dados = data.frame(TITULOS = titulos, NOTAS = notas, ANOS = anos)#coloca os dados em um data frame
-cat("\nQuestão 1 - imprimindo o datafrme..:\n")
+cat("\nQuestao 1 - imprimindo o dataframe..:\n")
 print(dados)#printa os dados
 
 #####################################################################################################
 
-# InÃ�cio da questÃ£o (2) ---------------------------------
-# Encontre a mÃ©dia das notas (sem utilizar a funÃ§Ã£o pronta do R).
+# Inicio da questao (2) ---------------------------------
+# Encontre a media das notas (sem utilizar a funcao pronta do R).
 
 tamanhoDaAmostra = lengths(dados[1])#leva alem do tamanho o nome da coluna
 unname(tamanhoDaAmostra, force = FALSE)#tira o nome da coluna
@@ -44,12 +44,13 @@ media = function(dados){
  
 }
 MEDIA_ = media(dados)
-cat("\nQuestão 2 - a Média é:", MEDIA_)
+cat("\nQuestao 2 - a media eh:", MEDIA_)
+cat("\n")
 
 #####################################################################################################
 
-# InÃ�cio da questÃ£o (3) ---------------------------------
-# Encontre o desvio padrÃ£o das notas (sem utilizar a funÃ§Ã£o pronta do R).
+# Inicio da questao (3) ---------------------------------
+# Encontre o desvio padrao das notas (sem utilizar a funcao pronta do R).
   variancia = 0;
   
   desvio = function(dados){
@@ -65,14 +66,16 @@ cat("\nQuestão 2 - a Média é:", MEDIA_)
 
   }
 DESVIO_ = desvio(dados)
-  cat("\nQuestao 3 - O Desvio padrão é: ", DESVIO_)
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+  cat("\nQuestao 3 - O Desvio padrao eh: ", DESVIO_)
+  cat("\n")
+  
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
 
 #####################################################################################################
-# InÃ�cio da questÃ£o (4) ---------------------------------
-# Encontre a moda das notas (sem utilizar a funÃ§Ã£o pronta do R).
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
-  cat("\nQuestão 4 - A nota de maior moda é:\n")
+# Inicio da questao (4) ---------------------------------
+# Encontre a moda das notas (sem utilizar a funcao pronta do R).
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+  cat("\nQuestao 4 - A nota de maior moda eh:\n")
   selecaoModa = function(){
     
     filtro = dados
@@ -88,22 +91,22 @@ DESVIO_ = desvio(dados)
   
 #####################################################################################################
 
-# InÃ�cio da questÃ£o (5) ---------------------------------
-# FaÃ§a uma funÃ§Ã£o que retorna apenas os nomes dos filmes que possuem notas maiores ou iguais a seis (6).
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
-  cat("\nQuestão 5 - Os filmes com nota maior ou igual a seis(6) são:\n")
-  selecao = function(){
+# Inicio da questao (5) ---------------------------------
+# Faça uma funcao que retorna apenas os nomes dos filmes que possuem notas maiores ou iguais a seis (6).
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+  cat("\nQuestao 5 - Os filmes com nota maior ou igual a seis(6) sao:\n")
+  selecaoNotaMaiorOuIgualAseis = function(){
     filmesComNotaMaiorOuIgualA6 = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
     filmesComNotaMaiorOuIgualA6 = unname(filmesComNotaMaiorOuIgualA6, force = FALSE)#tira o nome da coluna
     print(filmesComNotaMaiorOuIgualA6, row.names = FALSE)
   }
-  selecao()
+  selecaoNotaMaiorOuIgualAseis()
   
 #####################################################################################################
 
-# InÃ�cio da questÃ£o (6) --------------------------------- 
-  cat("\nQuestão 6 - A quantidade de filmes com nota nota menor que seis(6) é:\n")
-#FaÃ§a uma funÃ§Ã£o que retorna quantos filmes possuem notas abaixo de seis (6).
+# Inicio da questao (6) --------------------------------- 
+  cat("\nQuestao 6 - A quantidade de filmes com nota nota menor que seis(6) eh:\n")
+#Faça uma funcao que retorna quantos filmes possuem notas abaixo de seis (6).
   notaMenorQueSeis  = function(dados){
     qtd = 0
     for ( i in 1:tamanhoDaAmostra){
@@ -118,27 +121,13 @@ DESVIO_ = desvio(dados)
   cat("\n")
       
   
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
 #####################################################################################################
 
-# InÃ�cio da questÃ£o (7) ---------------------------------
-# FaÃ§a uma funÃ§Ã£o que retorna o nome do filme com menor pontuaÃ§Ã£o e o nome do filme com maior pontuaÃ§Ã£o, nessa ordem.
-# Por fim, faÃ§a um dataframe com os dois filmes encontrados com as colunas TÃTULO, NOTA, ANO assim como o original.
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
-  cat("\nQuestão 7 - Os filme com maior e menor pontuacao, respectivamente são:\n")
- # selecao = function(){
- #  filtro = dados
-  #  filtro = dados[dados$NOTAS >= 6,]["TITULOS"]#faz filtragem na coluna de titulos
-   # filtro = unname(filtro, force = FALSE)#tira o nome da coluna
-  #  print(filtro, row.names = FALSE)
-#  }
- # selecao()
-#####################################################################################################
-
-# InÃ�cio da questÃ£o (8) ---------------------------------
-# FaÃ§a uma funÃ§Ã£o que retorne o ano em que saÃ�ram mais filmes com notas maiores ou iguais a seis e meio (6,5).
-  cat("\nQuestão 8 - O ano em que saiu mais filmes com notas maiores ou iguais a seis e meio(6.5), é:\n")
-  selecao2 = function(){
+# Inicio da questao (8) ---------------------------------
+# Faça uma funcao que retorne O ano em que sairam mais filmes com notas maiores ou iguais a seis e meio (6,5).
+  cat("\nQuestao 8 - O ano em que saiu mais filmes com notas maiores ou iguais a seis e meio(6.5), eh:\n")
+  selecaoAno = function(){
     
     filtro = dados
     filtro = dados[dados$NOTAS >= (6.5),][3]#faz filtragem na coluna de anos --> 3, ao colocar "ANOS" nao reconhece.
@@ -148,11 +137,39 @@ DESVIO_ = desvio(dados)
     cat("vezes\n")
     
    }
-  selecao2()
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+  selecaoAno()
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
 #####################################################################################################
 
-# InÃ�cio da questÃ£o (9) ---------------------------------
-# FaÃ§a um histograma onde mostra a frequÃªncia de filmes com notas maiores ou iguais a seis de cada ano. NÃ£o esqueÃ§a de dar um tÃ�tulo e fazer ele de forma colorida, facilitando a visualizaÃ§Ã£o. 
-# Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
+# Inicio da questao (9) ---------------------------------
+# Faça um histograma onde mostra a frequencia de filmes com notas maiores ou iguais a seis de cada ano. 
+# Nao esqueca de dar um titulo e fazer ele de forma colorida, facilitando a visualizacao. 
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+#####################################################################################################
+
+# Inicio da questao (7) ---------------------------------
+# Faça uma funcao que retorna o nome do filme com menor pontuacao e o nome do filme com maior pontuacao, nessa ordem.
+# Por fim, Faça um dataframe com os dois filmes encontrados com as colunas titulo, NOTA, ANO assim como o original.
+# Nessa questao, o problema da media foi resolvido da seguinte forma (...)
+cat("\nQuestao 7 - Os filme com maior e menor pontuacao, respectivamente sao:\n")
+selecaoMenorEMaior = function(){
+  filtro = dados
+  #filtro2 = dados
+  filtro = dados[dados$NOTAS >= 0,]
+  maximo = max(filtro[2]);
+  print(maximo)
+  minimo = min(filtro[2]);
+  print(minimo)
+ print(filtro[maximo,])
+  
+  # for(i in dados){
+    
+  #  if(i[2]$NOTAS == maximo)
+   # print(i)
+  #}
+  
+  #print(tabela[tabela == max(tabela)])
+  #cat("vezes\n")
+}
+selecaoMenorEMaior()
 #####################################################################################################
