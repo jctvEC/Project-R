@@ -21,7 +21,7 @@ notas = db[2]
 anos = db[3]
 
 dados = data.frame(TITULOS = titulos, NOTAS = notas, ANOS = anos)#coloca os dados em um data frame
-
+cat("\nQuestão 1 - imprimindo o datafrme..:\n")
 print(dados)#printa os dados
 
 #####################################################################################################
@@ -44,7 +44,7 @@ media = function(dados){
  
 }
 MEDIA_ = media(dados)
-cat("\nQuestão 1 - a Média é:", MEDIA_)
+cat("\nQuestão 2 - a Média é:", MEDIA_)
 
 #####################################################################################################
 
@@ -65,7 +65,7 @@ cat("\nQuestão 1 - a Média é:", MEDIA_)
 
   }
 DESVIO_ = desvio(dados)
-  cat("\nQuestao 2 - O Desvio padrão é: ", DESVIO_)
+  cat("\nQuestao 3 - O Desvio padrão é: ", DESVIO_)
 # Nessa questÃ£o, o problema da mÃ©dia foi resolvido da seguinte forma (...)
 
 #####################################################################################################
